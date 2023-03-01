@@ -39,20 +39,13 @@ function principal(){
      // Realiza un gráfico en barras de hombres y mujeres por cada clase
 
 
-    /* ¿Cómo se llama la persona con mayor edad que sobrevivió?   */
-    
-    let lst_orden_pasajeros_titanic = pasajeros_titanic.sort((x,y) => 
-                  parseFloat(y.age) - parseFloat(x.age));
-    let pasajero_mayor = lst_orden_pasajeros_titanic[0];
+    /*  ########################
+        #  Muestra por consola #
+        ########################
+    */
 
-    console.log("¿Cómo se llama la persona con mayor edad que sobrevivió?");
-    console.log(pasajero_mayor.name + "(" + pasajero_mayor.age+ ")");
-
+    //¿Cómo se llama la persona con mayor edad que sobrevivió?   Nota: ordena y obten el primer elemento de la lista.
     //¿En qué bote se salvó y cuantas personas le acompañaban?
-    console.log(pasajero_mayor.boat);
-    
-    acompañantes = pasajeros_titanic.filter(p => p.boat === pasajero_mayor.boat);
-    console.log("Total acompañantes: " + acompañantes.length + " de bote" +  pasajero_mayor.boat);
 
     //¿Cuántos españoles sobrevivieron?¿En qué clase viajaban?
     let total_españoles = pasajeros_titanic.filter(p=>p.from.includes("Spain")).length;
@@ -60,35 +53,13 @@ function principal(){
 
 
    // ¿Cuántas personas sobrevivieron por cada clase?
-   total_clases = {"clase_1":0, "clase_2":0, "clase_3":0};
-   pasajeros_titanic.filter(p=>p.survived =="1").forEach(p=>{
-      if(p.pclass==="1"){
-        total_clases["clase_1"]++;
-      }else if(p.pclass =="2"){
-        total_clases["clase_2"]++;
-      }else if(p.pclass =="3"){
-        total_clases["clase_3"]++;
-      }
 
-   });
-   console.log("Total clases supervivientes: ");
-   console.log( total_clases);
 
    // ¿Qué porcentaje de hombres y mujeres sobrevivieron?
-   total_hombres_mujeres_survive = {"hombres": 0, "mujeres":0};
-   
-   porcentaje_hombre =  pasajeros_titanic.filter(p=>p.survived =="1" && p.sex=="male").length * 100 / pasajeros_titanic.filter(p=> p.sex=="male").length;
-   console.log("% hombre superviviente: "+ porcentaje_hombre);
-   porcentaje_hombre =  pasajeros_titanic.filter(p=>p.survived =="1" && p.sex=="female").length * 100 / pasajeros_titanic.filter(p=> p.sex=="female").length;
-   console.log("% mujer superviviente: "+porcentaje_hombre);
 
 
    // ¿Cual es el precio medio por clase?
 
-
-   precio_medio = pasajeros_titanic.filter(p=>p.pclass=="3").map(p=>parseFloat(p.fare));
-
-   console.log(precio_medio);
 
    // ¿Cual es el precio medio por cada clase de los SUPERVIVIENTES?
    // ¿Cual es la edad media de cada clase?
