@@ -34,10 +34,9 @@ function principal(){
      // Muestra gráfico en barras por cada clase supervivientes y muertos
      grafico_clases();
 
-     // Realiza un gráfico circular de hombres y mujeres
-
-     // Realiza un gráfico en barras de hombres y mujeres por cada clase
-
+      // Realiza un gráfico circular de hombres y mujeres
+     // Realiza un gráfico circular con los supervivientes de hombres y mujeres 
+      // Realiza un gráfico en barras de hombres y mujeres supervivientes por cada clase
 
     /*  ########################
         #  Muestra por consola #
